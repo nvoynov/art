@@ -7,7 +7,12 @@ CLEAN.include(
   File.join(WWW, 'sitemap.xml'),
   File.join(WWW, 'robots.txt'),
   File.join(WWW, 'cachemap.json'),
+  File.join(WWW, 'seriesmap.json'),
   File.join(WWW, 'sw.js'),
+  File.join(RAW, 'series/*'),
+  File.join(RAW, 'series.md'),
+  File.join(RAW, 'studio/vault.md'),
+  File.join(RAW, 'studio/vault/*'),
   SiteModel.new.pages.map(&:destination_path)
 )
 
@@ -38,9 +43,10 @@ namespace :site do
     puts "  » assets: compiled #{WWW_STYLE}"
   end
 
-  # just copy other than styles
-  rule(%r{^#{WWW_ASSETS}/(?!css/|.+/css/).+$}) do |t|
+  # just copy other than styles and series/ images
+  rule(%r{^#{WWW_ASSETS}/(?!css/|.+/css/|series/).+$}) do |t|
     source = t.name.sub(/^#{WWW_ASSETS}/, RAW_ASSETS)
+    next unless File.exist?(source)
     File.dirname(t.name).then{ mkdir_p it unless Dir.exist?(it) }
     cp source, t.name, verbose: false
     puts "  » assets: copied #{source} -> #{t.name}"
@@ -53,29 +59,48 @@ namespace :site do
 
   COMPILER = PageTask.new
 
-  PAGES = SiteModel.new.pages
-    .map{ [_1.destination_path, _1.source_path] }
-    .to_h
+  def pagemap
+    SiteModel.new.pages
+      .map{ [it.destination_path, it.source_path] }
+      .to_h
+  end
   
-  # NOTE: this fits the situattion when all pages prepared beforehed
-  #   When you generate pages depend on site_root, you need to change
-  #   it for straight approach Site.new.pages.each{ COMPILER.call(it) }
-  desc 'Compile markdown pages'
-  task :pages => PAGES.keys
+  rule ".html" => ->(f){ pagemap[f] } do |t|
+    COMPILER.(t.source, extra_arguments: extra_args(t.name))
+    puts "  » pages: compiled #{t.name}"
+  end
 
-  rule ".html" => ->(f){ PAGES[f] } do |t|
-    COMPILER.(t.source)
-    puts "  » pages: compiled #{t.source} -> #{t.name}"
+  desc 'Compile markdown pages'
+  # task :pages => proc{ pagemap.keys }
+  task :pages do
+    pagemap.keys.each do |html_file|
+      Rake::Task[html_file].invoke
+    end
+    puts "  » pages: all markdown pages verified/compiled"
+  end
+
+  ANALYTICS = File.join(RAW, 'fragments', 'analytics.html')
+  LIGHBOX   = File.join(RAW, 'fragments', 'lightbox.html')
+  
+  # Helper method to dry up and orchestrate native Pandoc include-before-body injections
+  def extra_args(target_src)
+    is_index  = target_src.match?(/\/index\.html$/)
+    is_series = target_src.match?(/\/series\/.*\.html$/)
+
+    [].tap{
+      it << "--include-before-body=#{ANALYTICS}"
+      it << "--include-before-body=#{LIGHBOX}" \
+        if is_index || is_series
+    }
   end
 
 ######## Site index files
 
-  # Исправлена опечатка в stie_url -> site_url
   URL = CONFIG.site_url 
   SITEMAP = File.join(WWW, 'sitemap.xml')
 
-  desc "Build sitemap.xml"
-  file SITEMAP => PAGES.keys do |t|
+  desc "Build sitemap.xml, triggers md -> html"
+  file SITEMAP => :pages do |t|
     SitemapTask.call
     puts "  » index: dump /#{t.name}"
   end
@@ -117,4 +142,4 @@ namespace :site do
 end
 
 desc "Build site"
-task :build => %w[ site:assets site:pages site:index ]
+task :build => %w[ site:assets site:index ]

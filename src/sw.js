@@ -27,7 +27,7 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// 2. Activate Event: Granular image eviction based on the compiled assets-manifest.json
+// 2. Activate Event: Granular image eviction based on the cachemap.json
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     // Force immediate initialization of the images cache database context

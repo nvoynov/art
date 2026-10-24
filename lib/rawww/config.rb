@@ -36,11 +36,11 @@ module Rawww
     end
     
     def production?
-      @poduction ||= ENV['RAWWW_PRODUCTION'] == 'true'
+      ENV['RAWWW_PRODUCTION'] == 'true'
     end
 
     def site_root
-      @site_root ||= production? ? production_root_path : root_path
+      production? ? production_root_path : root_path
     end      
   end
 end

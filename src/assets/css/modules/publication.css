@@ -1,0 +1,245 @@
+/* ==========================================================================
+   Flatplan Quiet Art Gallery — Core Stylesheet
+   ========================================================================== */
+
+/* Base Reset & Variables */
+:root {
+  --flatplan-bg: #f9f9f9;     /* Светлый, слегка матовый бумажный фон */
+  --flatplan-text: #1a1a1a;   /* Глубокий графитовый цвет для текста */
+  --flatplan-muted: #8a8a8a;  /* Серый для подписей (captions) */
+  --flatplan-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --flatplan-gap: 2rem;
+  --flatplan-max-width: 1400px;
+}
+
+body {
+  background-color: var(--flatplan-bg);
+  color: var(--flatplan-text);
+  font-family: var(--flatplan-font-sans);
+  line-height: 1.6;
+  margin: 0;
+  padding: 4rem 2rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- THE ARTISTIC NARRATIVE TYPOGRAPHY --- */
+.page-main-body-content h1 {
+  font-family: inherit !important;
+  font-size: 1.1rem !important;       
+  font-weight: 300 !important;       
+  letter-spacing: 0.18em !important; 
+  text-transform: uppercase !important; 
+  color: #1a1a1a !important;
+  text-align: center !important;     
+  margin-top: 2.8125rem !important;  
+  margin-bottom: 2.8125rem !important; 
+}
+
+.flatplan_story_text p {
+  margin-top: 0;
+  margin-bottom: 1.375rem;          
+  font-size: 0.95rem !important;    
+  line-height: 1.8 !important;      
+  color: #2c2c2c !important;        
+  text-align: left !important;
+}
+
+/* --------------------------------------------------------------------------
+   1. Structural Sections (Layout Rows transformed to Global Grid)
+   -------------------------------------------------------------------------- */
+.flatplan_section {
+  max-width: var(--flatplan-max-width);
+  margin: 0 auto 6rem auto;
+  box-sizing: border-box;
+
+  /* РАДИКАЛЬНОЕ РЕШЕНИЕ: Все секции на странице становятся единым 3-колоночным Гридом! 
+     1 колонка (1fr) уходит под текст, 2 колонки (2fr) — под медиа-коридор. */
+  display: grid !important;
+  grid-template-columns: 1fr 2fr !important;
+  gap: var(--flatplan-gap) !important;
+}
+
+/* Если в секции нет текста (только медиа на 3 колонки), мы заставляем её 
+   занимать всю ширину глобального коридора от края до края */
+.flatplan_section:not(.flatplan_layout_left_text):not(.flatplan_layout_right_text) {
+  display: block !important; /* Отменяем грид-разделение для чистых галерей */
+  width: 100% !important;
+}
+
+/* Корректируем текстовый блок, чтобы он идеально сидел в своей первой колонке */
+.flatplan_flow_false .flatplan_story_text {
+  width: 100% !important;
+  max-width: 100% !important;
+  position: sticky;
+  top: 4rem;
+  box-sizing: border-box;
+  word-break: break-word; 
+  overflow-wrap: break-word;
+}
+
+/* Правый медиа-блок теперь идеально занимает свои 2/3 глобального грида */
+.flatplan_flow_false .flatplan_media_grid {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* Поддержка реверса (если текст должен быть справа) */
+.flatplan_layout_right_text {
+  /* Переставляем колонки глобального грида местами: сначала 2 части медиа, потом 1 часть текста */
+  grid-template-columns: 2fr 1fr !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Typography Sub-classes
+   -------------------------------------------------------------------------- */
+.flatplan_story_text p {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Standalone Text Container Modifiers */
+.flatplan_text_only {
+  display: block;
+}
+
+.flatplan_width_narrow { max-width: 600px; }
+.flatplan_width_normal { max-width: 900px; }
+.flatplan_width_wide   { max-width: var(--flatplan-max-width); }
+
+.flatplan_align_left   { text-align: left; margin-left: 0; }
+.flatplan_align_center { text-align: center; margin-left: auto; margin-right: auto; }
+.flatplan_align_right  { text-align: right; margin-right: 0; }
+
+/* --------------------------------------------------------------------------
+   3. The Media Grid Component
+   -------------------------------------------------------------------------- */
+.flatplan_media_grid {
+  display: grid;
+  gap: var(--flatplan-gap);
+  width: 100%;
+  box-sizing: border-box;
+  justify-items: stretch;
+  align-items: start;
+}
+
+/* Columns Strategy */
+.flatplan_cols_1 { grid-template-columns: 1fr; }
+.flatplan_cols_2 { grid-template-columns: repeat(2, 1fr); }
+.flatplan_cols_3 { grid-template-columns: repeat(3, 1fr); }
+.flatplan_cols_4 { grid-template-columns: repeat(4, 1fr); }
+
+/* Aspect Ratio Framing Strategies */
+.flatplan_media_grid figure {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.flatplan_image_cell {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Neutralize our technical wrapping div from Pandoc builder */
+.flatplan_image_cell div {
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.flatplan_media_grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Natural aspect ratio: photos keep original dimensions and stretch seamlessly */
+.flatplan_aspect_natural img {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+}
+
+/* Square mode framing: force strict 1:1 gallery cells */
+.flatplan_aspect_square figure {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Forces 1:1 Aspect Ratio Box */
+}
+
+.flatplan_aspect_square img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Minimalist Caption Styling */
+.flatplan_media_grid figcaption {
+  font-size: 0.85rem;
+  color: var(--flatplan-muted);
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+/* ==========================================================================
+   Mobile Adaptive Styles (Добавить в самый конец файла)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* 1. Сбрасываем глобальные отступы у body для мобильных */
+  body {
+    padding: 2rem 1rem !important;
+  }
+
+  /* 2. Отменяем 2-колоночный грид: текст и медиа теперь идут друг за другом */
+  .flatplan_section, 
+  .flatplan_section.flatplan_layout_right_text {
+    display: block !important;
+    margin-bottom: 3rem auto !important;
+  }
+
+  /* 3. Делаем текстовый блок на всю ширину и убираем "sticky" эффект */
+  .flatplan_flow_false .flatplan_story_text {
+    position: static !important; /* Текст больше не залипает при скролле */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 2rem !important; /* Отступ между текстом и началом картинок */
+  }
+
+  /* Текст выравниваем по ширине/левому краю для удобства чтения */
+  .flatplan_story_text p {
+    font-size: 1rem !important; /* Чуть увеличиваем для читаемости на телефонах */
+    line-height: 1.6 !important;
+  }
+
+  /* 4. Сбрасываем многоколоночность сетки изображений в 1 колонку */
+  .flatplan_flow_false .flatplan_media_grid,
+  .flatplan_media_grid,
+  .flatplan_cols_2, 
+  .flatplan_cols_3, 
+  .flatplan_cols_4 {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important; /* На случай, если flex где-то перебьется */
+    gap: 1.5rem !important; /* Умеренный отступ между картинками на мобильном */
+    width: 100% !important;
+  }
+
+  /* 5. Корректируем ячейки изображений, чтобы они не сжимались */
+  .flatplan_image_cell {
+    width: 100% !important;
+  }
+
+  /* Если используется квадратный режим (1:1), адаптируем его под полную ширину */
+  .flatplan_aspect_square figure {
+    padding-top: 100% !important; 
+  }
+}
+

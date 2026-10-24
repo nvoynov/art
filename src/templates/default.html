@@ -12,13 +12,11 @@
   <link rel="canonical" href="$canonical_url$">  
   
   <!-- Open Graph / Facebook Production Layer -->
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="$if(og_type)$$og_type$$else$website$endif$">
   <meta property="og:url" content="$canonical_url$">
   <meta property="og:title" content="$if(title)$$title$ | $site_title$$else$$site_title$$endif$">
-  <meta property="og:description" content="Raw Markdown to WWW. A minimalist, high-utility static website engine driven by Ruby, Rake, and Pandoc.">
-  <!-- Clean absolute path pointing straight to the root production banner -->
-  <!-- <meta property="og:image" content="$site_url$$root_path$/og-card.svg"> -->
-  <meta property="og:image" content="$site_url$$root_path$/assets/og-card.png">
+  <meta property="og:description" content="$description$">
+  <meta property="og:image" content="$if(og_image)$$site_url$/$og_image$$else$$site_url$/assets/og_image.png$endif$">
 
   <!-- Branding Visual Identities Core Assets -->
   <link rel="icon" type="image/svg+xml" href="$root_path$/assets/favicon.svg">
@@ -27,15 +25,15 @@
 </head>
 
 <body>
+  
   <div class="site-container">
     <header class="site-header">
       <div class="site-title">
         <div class="site-title-text">
-          <!-- 3. Dynamic root path injection for the home link -->
           <a href="$root_path$/index.html">
-            <!-- 4. Dynamic root path injection for the header logo glyph -->
-            <img src="$root_path$/assets/favicon.svg" class="header-divider-icon" alt="RAWWW Logo" style="height: 1.5rem; vertical-align: middle; margin-right: 0.5rem;" />
-            RAWWW
+            Nikolay Voynov
+            <img src="$root_path$/assets/glyph.svg" class="header-divider-icon" alt="" />
+            Exposure
           </a>
         </div>
       </div>
@@ -44,28 +42,42 @@
       <nav class="site-nav">
         <!-- 5. Dynamic root path injection for navigation mapping -->
         <a href="$root_path$/index.html" class="nav-link">Home</a>
-        <a href="$root_path$/readme.html" class="nav-link">Readme</a>
-        <a href="$root_path$/changelog.html" class="nav-link">Changelog</a>
+        <a href="$root_path$/series.html" class="nav-link">Series</a>
         <a href="$root_path$/about.html" class="nav-link">About</a>
       </nav>
     </header>
+
+    <!-- Pandoc native body injection channel -->
+    $include-before$
 
     <main class="content-container">
       <!-- Native Markdown text output channel compiled by Pandoc -->
       <div class="page-main-body-content">
         $body$
       </div>
-
-      <!-- Pandoc native body injection channel -->
-      $include-before$
     </main>
 
+    <!-- Pandoc native body injection channel -->
+    $include-after$
+
     <footer>
-      <p>&copy; 2026 $if(author)$$author$$else$RAWWW Developer$endif$. All rights reserved.</p>
+      <p>&copy; 2026 $author$. All rights reserved.</p>
       <p style="font-size: 0.75rem; opacity: 0.6; margin-top: 5px;">
-        Powered by Rake and Pandoc. Clean, minimal, raw web.
+        No images or text on this site may be reproduced or transmitted 
+        in any form without prior written permission.
       </p>
     </footer>
+
+    <!-- Progressive Web App Caching Lifecycle Activation -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('$root_path$/sw.js')
+            .then(reg => console.log('==> [PWA Engine] ServiceWorker successfully registered:', reg.scope))
+            .catch(err => console.error('--> [PWA Engine] ServiceWorker registration failed:', err));
+        });
+      }
+    </script>
   </div>
 </body>
 </html>

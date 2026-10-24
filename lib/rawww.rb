@@ -8,6 +8,9 @@ require_relative 'rawww/pandoc'
 
 module Rawww
   extend ::Basic::AliasMembers
+
+  # strange things happen when Rawww and Flatplan have Config.instance
+  Rawww::Config.instance
   
   alias_members Model
   alias_members Task

@@ -27,7 +27,7 @@ module Rawww
 
       private
 
-      def config = Config.instance
+      def config = Rawww::Config.instance
     end
   end
 end

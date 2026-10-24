@@ -18,7 +18,7 @@ module Rawww
     def call(source:, template:, destination:, variables: {}, extra_arguments: [])
       cmd = [
         source,
-        "-f", "markdown+fenced_divs+raw_html",
+        "-f", "markdown+yaml_metadata_block+fenced_divs+raw_html",
         "-t", "html5",
         "--template", template,
         "-o", destination
