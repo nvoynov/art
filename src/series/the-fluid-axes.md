@@ -24,30 +24,46 @@ Sunlight catching the winter bark becomes a vibrant stroke of amber ink, while t
 
 ::: {.flatplan_media_grid .flatplan_cols_2 .flatplan_aspect_natural}
 ::: {.flatplan_image_cell #P1001501}
-<div><span></span>![](/assets/series/the-fluid-axes/thumb/P1001501.webp "")</div>
+<div><span></span>![](/exposure/assets/series/the-fluid-axes/thumb/P1001501.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001505}
-<div><span></span>![](/assets/series/the-fluid-axes/thumb/P1001505.webp "")</div>
+<div><span></span>![](/exposure/assets/series/the-fluid-axes/thumb/P1001505.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001495}
-<div><span></span>![](/assets/series/the-fluid-axes/thumb/P1001495.webp "")</div>
+<div><span></span>![](/exposure/assets/series/the-fluid-axes/thumb/P1001495.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1011861}
-<div><span></span>![](/assets/series/the-fluid-axes/thumb/P1011861.webp "")</div>
+<div><span></span>![](/exposure/assets/series/the-fluid-axes/thumb/P1011861.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1011859}
-<div><span></span>![](/assets/series/the-fluid-axes/thumb/P1011859.webp "")</div>
+<div><span></span>![](/exposure/assets/series/the-fluid-axes/thumb/P1011859.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1012097}
-<div><span></span>![](/assets/series/the-fluid-axes/thumb/P1012097.webp "")</div>
+<div><span></span>![](/exposure/assets/series/the-fluid-axes/thumb/P1012097.webp "")</div>
+:::
+
+::: {.flatplan_image_cell #P1012293}
+<div><span></span>![](/exposure/assets/series/the-fluid-axes/thumb/P1012293.webp "")</div>
+:::
+
+::: {.flatplan_image_cell #P1012452}
+<div><span></span>![](/exposure/assets/series/the-fluid-axes/thumb/P1012452.webp "")</div>
+:::
+
+::: {.flatplan_image_cell #P1012466}
+<div><span></span>![](/exposure/assets/series/the-fluid-axes/thumb/P1012466.webp "")</div>
+:::
+
+::: {.flatplan_image_cell #P1012485}
+<div><span></span>![](/exposure/assets/series/the-fluid-axes/thumb/P1012485.webp "")</div>
 :::
 
 :::
 :::
 
-<script src="/assets/js/lightbox.js" defer></script>
+<script src="/exposure/assets/js/lightbox.js" defer></script>

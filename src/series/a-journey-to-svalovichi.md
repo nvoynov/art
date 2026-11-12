@@ -36,31 +36,31 @@ The journey continues.
 
 ::: {.flatplan_media_grid .flatplan_cols_2 .flatplan_aspect_natural}
 ::: {.flatplan_image_cell #DP2Q2551}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2551.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2551.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2553}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2553.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2553.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2554}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2554.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2554.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2558}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2558.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2558.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2569}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2569.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2569.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2575}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2575.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2575.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2583}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2583.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2583.webp "")</div>
 :::
 
 :::
@@ -69,75 +69,75 @@ The journey continues.
 ::: {.flatplan_section}
 ::: {.flatplan_media_grid .flatplan_cols_3 .flatplan_aspect_natural}
 ::: {.flatplan_image_cell #DP2Q2595}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2595.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2595.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2604}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2604.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2604.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2644}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2644.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2644.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2655}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2655.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2655.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2659}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2659.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2659.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP0Q0549}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP0Q0549.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP0Q0549.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2697}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2697.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2697.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q2734}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q2734.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q2734.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3160}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q3160.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q3160.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3166}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q3166.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q3166.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3216}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q3216.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q3216.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3223}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q3223.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q3223.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3253}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q3253.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q3253.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3271}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q3271.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q3271.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3280}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q3280.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q3280.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3296}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q3296.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q3296.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3313}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q3313.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q3313.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3359}
-<div><span></span>![](/assets/series/a-journey-to-svalovichi/thumb/DP2Q3359.webp "")</div>
+<div><span></span>![](/exposure/assets/series/a-journey-to-svalovichi/thumb/DP2Q3359.webp "")</div>
 :::
 
 :::
@@ -155,4 +155,4 @@ The journey continues.
 :::
 
 
-<script src="/assets/js/lightbox.js" defer></script>
+<script src="/exposure/assets/js/lightbox.js" defer></script>

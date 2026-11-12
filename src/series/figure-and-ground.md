@@ -28,51 +28,51 @@ The war scaled up this familiar patch of land, turning it into a world of the fl
 
 ::: {.flatplan_media_grid .flatplan_cols_2 .flatplan_aspect_natural}
 ::: {.flatplan_image_cell #DP2Q0346}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/DP2Q0346.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/DP2Q0346.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q1941}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/DP2Q1941.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/DP2Q1941.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3491}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/DP2Q3491.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/DP2Q3491.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3507}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/DP2Q3507.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/DP2Q3507.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3516}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/DP2Q3516.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/DP2Q3516.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3521}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/DP2Q3521.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/DP2Q3521.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP0Q0624}
-<div><span></span>![late night on Friday forest, in early winter under a waxing crescent moon, 2024](/assets/series/figure-and-ground/thumb/DP0Q0624.webp "")</div>
+<div><span></span>![late night on Friday forest, in early winter under a waxing crescent moon, 2024](/exposure/assets/series/figure-and-ground/thumb/DP0Q0624.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3636}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/DP2Q3636.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/DP2Q3636.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3680}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/DP2Q3680.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/DP2Q3680.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3688}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/DP2Q3688.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/DP2Q3688.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #DP2Q3714}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/DP2Q3714.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/DP2Q3714.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1000182}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1000182.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1000182.webp "")</div>
 :::
 
 :::
@@ -81,107 +81,115 @@ The war scaled up this familiar patch of land, turning it into a world of the fl
 ::: {.flatplan_section}
 ::: {.flatplan_media_grid .flatplan_cols_3 .flatplan_aspect_natural}
 ::: {.flatplan_image_cell #P1000237}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1000237.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1000237.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1000382}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1000382.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1000382.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1000502}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1000502.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1000502.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1000612}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1000612.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1000612.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1000722}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1000722.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1000722.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1000744}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1000744.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1000744.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1000954}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1000954.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1000954.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1000964}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1000964.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1000964.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001060}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1001060.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1001060.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001064}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1001064.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1001064.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001074}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1001074.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1001074.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001106}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1001106.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1001106.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001130}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1001130.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1001130.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001192}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1001192.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1001192.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001309}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1001309.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1001309.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001445}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1001445.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1001445.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001652}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1001652.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1001652.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1011694}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1011694.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1011694.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1011864}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1011864.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1011864.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1011868}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1011868.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1011868.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1011900}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1011900.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1011900.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1011930}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1011930.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1011930.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1011962}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1011962.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1011962.webp "")</div>
 :::
 
-::: {.flatplan_image_cell #P1011991}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1011991.webp "")</div>
+::: {.flatplan_image_cell #P1011964}
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1011964.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1012207}
-<div><span></span>![](/assets/series/figure-and-ground/thumb/P1012207.webp "")</div>
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1012207.webp "")</div>
+:::
+
+::: {.flatplan_image_cell #P1012687}
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1012687.webp "")</div>
+:::
+
+::: {.flatplan_image_cell #P1012763}
+<div><span></span>![](/exposure/assets/series/figure-and-ground/thumb/P1012763.webp "")</div>
 :::
 
 :::
 :::
 
 
-<script src="/assets/js/lightbox.js" defer></script>
+<script src="/exposure/assets/js/lightbox.js" defer></script>

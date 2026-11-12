@@ -197,4 +197,50 @@ document.addEventListener('DOMContentLoaded', () => {
   // Run native parsing loops sequentially
   initGalleryPool();
   resolveActivePhotoParameter();
+
+  // --- LAYER 4: MOBILE TOUCH SWIPE GESTURES (ANTI-CONFLICT VERSION) ---
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchEndX = 0;
+  let touchEndY = 0;
+  const swipeThreshold = 40; 
+
+  overlay.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+  }, { passive: true });
+
+  overlay.addEventListener('touchmove', (e) => {
+    if (overlay.style.display !== 'flex') return;
+    
+    // Если свайп явно горизонтальный, запрещаем браузеру двигать саму страницу под лайтбоксом
+    const moveX = Math.abs(e.changedTouches[0].screenX - touchStartX);
+    const moveY = Math.abs(e.changedTouches[0].screenY - touchStartY);
+    if (moveX > moveY) {
+      if (e.cancelable) e.preventDefault();
+    }
+  }, { passive: false }); // Здесь false обязателен, чтобы работал preventDefault
+
+  overlay.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipeGesture();
+  }, { passive: true });
+
+  const handleSwipeGesture = () => {
+    if (overlay.style.display !== 'flex') return;
+    
+    const diffX = touchEndX - touchStartX;
+    const diffY = touchEndY - touchStartY;
+    
+    // Проверяем, что это был именно горизонтальный свайп, а не вертикальный скролл
+    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > swipeThreshold) {
+      if (diffX > 0) {
+        lightboxPrev();
+      } else {
+        lightboxNext();
+      }
+    }
+  };
+
 });

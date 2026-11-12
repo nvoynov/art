@@ -1,6 +1,10 @@
 ### [Unreleased]
 
 
+- [] Greece and other lost timestamp because it was not presented parsed by negative app
+- [] albums pages generated for empty albums like for Greece
+
+
 - [] check image pages OG
 - [] rewrite Almazone narraitve as journey inside
 - [] rewrite Svalovichi narrative as journey

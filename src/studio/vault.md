@@ -9,9 +9,9 @@ slug: vault
 ::: {.studio-archive-grid}
 
 ::: {.archive-preview-card .series}
-[![Series: Almazone](/assets/series/figure-and-ground/thumb/DP0Q0624.webp)](/studio/vault/almazone.html)
+[![Series: Almazone](/exposure/assets/series/figure-and-ground/thumb/DP0Q0624.webp)](/exposure/studio/vault/almazone.html)
 
-### [Series: Almazone](/studio/vault/almazone.html)
+### [Series: Almazone](/exposure/studio/vault/almazone.html)
 Limited edition portfolio containing 26 prints.
 :::
 

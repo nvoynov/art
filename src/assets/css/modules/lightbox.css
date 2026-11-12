@@ -116,24 +116,42 @@
 }
 
 /* ==========================================================================
-   MOBILE SCREEN BREAKPOINT DOWNGRADE
+   MOBILE SCREEN BREAKPOINT DOWNGRADE (FORCE OVERRIDE)
    ========================================================================== */
 @media (max-width: 900px) {
   .lightbox-stage {
-    width: 100vw; height: calc(100vh - 160px);
-    padding: 15px;
+    width: 100vw !important; 
+    height: calc(100vh - 140px) !important;
+    padding: 10px !important;
+    margin: 0 !important;
   }
-  .lightbox-stage img {
-    padding: 12px 12px 18px 12px;
-  }
-  .lightbox-nav-arrow { display: none; }
   
-  /* Shifts to an lightweight horizontal hotbar at the bottom of the device viewport */
+  .lightbox-stage img {
+    padding: 16px 16px 24px 16px !important;
+    max-height: 80vh !important;
+    max-width: 95vw !important;
+  }
+  
+  .lightbox-nav-arrow { 
+    display: none !important; 
+  }
+  
+  /* Жестко сбрасываем абсолютные десктопные координаты top и right */
   .lightbox-options-vertical-rack {
-    flex-direction: row-reverse; /* Maintains sequence logic horizontally */
-    top: auto; bottom: 30px;
-    right: auto; left: 50%;
-    transform: translateX(-50%);
-    gap: 32px;
+    position: absolute !important;
+    flex-direction: row-reverse !important; 
+    top: auto !important; 
+    bottom: 25px !important;
+    right: auto !important; 
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    gap: 36px !important; 
+    width: max-content !important;
+  }
+
+  .lightbox-options-vertical-rack .lightbox-btn {
+    width: 48px !important; 
+    height: 48px !important;
+    color: #ffffff !important; 
   }
 }

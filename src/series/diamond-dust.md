@@ -26,34 +26,38 @@ Ultimately, these images are records of a double disappearance. The organic debr
 
 ::: {.flatplan_media_grid .flatplan_cols_2 .flatplan_aspect_natural}
 ::: {.flatplan_image_cell #P1001460}
-<div><span></span>![Abstract macro photography of a single brown leaf trapped inside clear winter ice with a dense cluster of air bubbles on the left, image P1001460.](/assets/series/diamond-dust/thumb/P1001460.webp "Amber heart. A solitary autumn leaf wrapped in a cluster of frozen respiration. Early spring afternoon, Monday, 2026.")</div>
+<div><span></span>![Abstract macro photography of a single brown leaf trapped inside clear winter ice with a dense cluster of air bubbles on the left, image P1001460.](/exposure/assets/series/diamond-dust/thumb/P1001460.webp "Amber heart. A solitary autumn leaf wrapped in a cluster of frozen respiration. Early spring afternoon, Monday, 2026.")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001464}
-<div><span></span>![Top view close-up of a fallen orange oak leaf and decaying organic vegetation visible beneath a layer of thawing puddle ice, image P1001464.](/assets/series/diamond-dust/thumb/P1001464.webp "Suspended dialogue. Oak and old autumn leaves preserved under a melting glass sky. Early spring afternoon, Monday, 2026.")</div>
+<div><span></span>![Top view close-up of a fallen orange oak leaf and decaying organic vegetation visible beneath a layer of thawing puddle ice, image P1001464.](/exposure/assets/series/diamond-dust/thumb/P1001464.webp "Suspended dialogue. Oak and old autumn leaves preserved under a melting glass sky. Early spring afternoon, Monday, 2026.")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001475}
-<div><span></span>![Macro shot of a single brown maple leaf frozen solid in ice with frozen air bubbles outlining its serrated edges, image P1001475.](/assets/series/diamond-dust/thumb/P1001475.webp "The broken sail. A maples leaf skeleton caught in winter's fading geometry. Early spring morning, Tuesday, 2026.")</div>
+<div><span></span>![Macro shot of a single brown maple leaf frozen solid in ice with frozen air bubbles outlining its serrated edges, image P1001475.](/exposure/assets/series/diamond-dust/thumb/P1001475.webp "The broken sail. A maples leaf skeleton caught in winter's fading geometry. Early spring morning, Tuesday, 2026.")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001474}
-<div><span></span>![Fine art nature photography showing small elongated autumn leaves and a single green blade of grass embedded in clear ice, image P1001474.](/assets/series/diamond-dust/thumb/P1001474.webp "Constellations of the forest road. Small rowan leaves and a single blade of grass forming a fragile universe. Early spring morning, Tuesday, 2026.")</div>
+<div><span></span>![Fine art nature photography showing small elongated autumn leaves and a single green blade of grass embedded in clear ice, image P1001474.](/exposure/assets/series/diamond-dust/thumb/P1001474.webp "Constellations of the forest road. Small rowan leaves and a single blade of grass forming a fragile universe. Early spring morning, Tuesday, 2026.")</div>
+:::
+
+::: {.flatplan_image_cell #P1001476}
+<div><span></span>![](/exposure/assets/series/diamond-dust/thumb/P1001476.webp "")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001468}
-<div><span></span>![Graphic abstract composition of two long pine needles and dark decomposing leaves frozen under ice with gas spheres, image P1001468.](/assets/series/diamond-dust/thumb/P1001468.webp "The arrow of time. Pine needles pointing through layers of decaying wood and ice. Early spring afternoon, Monday, 2026.")</div>
+<div><span></span>![Graphic abstract composition of two long pine needles and dark decomposing leaves frozen under ice with gas spheres, image P1001468.](/exposure/assets/series/diamond-dust/thumb/P1001468.webp "The arrow of time. Pine needles pointing through layers of decaying wood and ice. Early spring afternoon, Monday, 2026.")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001463}
-<div><span></span>![Detailed close-up of boiling organic textures, dark brown decaying autumn leaves, and slushy ice crystals in afternoon sun, image P1001463.](/assets/series/diamond-dust/thumb/P1001463.webp "Shifting focus. Boiling textures of a melting spring puddle. Early spring afternoon, Monday, 2026.")</div>
+<div><span></span>![Detailed close-up of boiling organic textures, dark brown decaying autumn leaves, and slushy ice crystals in afternoon sun, image P1001463.](/exposure/assets/series/diamond-dust/thumb/P1001463.webp "Shifting focus. Boiling textures of a melting spring puddle. Early spring afternoon, Monday, 2026.")</div>
 :::
 
 ::: {.flatplan_image_cell #P1001467}
-<div><span></span>![Artistic macro image focusing on a massive round concentric air bubble surrounded by smaller foam bubbles over a frozen brown leaf, image P1001467.](/assets/series/diamond-dust/thumb/P1001467.webp "The boiling eye. When a simple puddle turns into a cosmic lens. Early spring afternoon, Monday, 2026.")</div>
+<div><span></span>![Artistic macro image focusing on a massive round concentric air bubble surrounded by smaller foam bubbles over a frozen brown leaf, image P1001467.](/exposure/assets/series/diamond-dust/thumb/P1001467.webp "The boiling eye. When a simple puddle turns into a cosmic lens. Early spring afternoon, Monday, 2026.")</div>
 :::
 
 :::
 :::
 
-<script src="/assets/js/lightbox.js" defer></script>
+<script src="/exposure/assets/js/lightbox.js" defer></script>
