@@ -1,6 +1,9 @@
 ### [Unreleased]
 
 
+- [] mobile lightbox
+  - [] small white border!
+  - [] options right side in landscape orientation
 - [] Greece and other lost timestamp because it was not presented parsed by negative app
 - [] albums pages generated for empty albums like for Greece
 

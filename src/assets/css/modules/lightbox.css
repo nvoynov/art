@@ -116,32 +116,39 @@
 }
 
 /* ==========================================================================
-   MOBILE SCREEN BREAKPOINT DOWNGRADE (FORCE OVERRIDE)
+   MOBILE & TABLET RESPONSIVE OVERRIDES (PORTRAIT & LANDSCAPE)
    ========================================================================== */
-@media (max-width: 900px) {
+
+/* 1. Базовые мобильные настройки и ПОРТРЕТНАЯ ориентация (кнопки снизу) */
+@media (max-width: 950px) and (orientation: portrait), (max-width: 600px) {
+  .lightbox-overlay {
+    height: 100dvh !important;
+  }
+
   .lightbox-stage {
     width: 100vw !important; 
-    height: calc(100vh - 140px) !important;
-    padding: 10px !important;
+    height: calc(100dvh - 110px) !important;
+    padding: 8px !important;
     margin: 0 !important;
   }
   
   .lightbox-stage img {
-    padding: 16px 16px 24px 16px !important;
-    max-height: 80vh !important;
-    max-width: 95vw !important;
+    /* Тонкая равномерная рамка со всех сторон */
+    padding: 5px !important; 
+    max-height: 100% !important;
+    max-width: 100% !important;
   }
   
   .lightbox-nav-arrow { 
     display: none !important; 
   }
   
-  /* Жестко сбрасываем абсолютные десктопные координаты top и right */
+  /* Панель опций по центру внизу */
   .lightbox-options-vertical-rack {
     position: absolute !important;
     flex-direction: row-reverse !important; 
     top: auto !important; 
-    bottom: 25px !important;
+    bottom: 20px !important;
     right: auto !important; 
     left: 50% !important;
     transform: translateX(-50%) !important;
@@ -150,8 +157,61 @@
   }
 
   .lightbox-options-vertical-rack .lightbox-btn {
-    width: 48px !important; 
-    height: 48px !important;
+    width: 44px !important; 
+    height: 44px !important;
     color: #ffffff !important; 
+  }
+}
+
+/* 2. ПЕЙЗАЖНАЯ (альбомная) ориентация на мобильных (кнопки справа, как на десктопе) */
+@media (max-width: 950px) and (orientation: landscape) and (max-height: 550px) {
+  .lightbox-overlay {
+    height: 100dvh !important;
+    justify-content: flex-start !important; /* Смещаем сцену влево, освобождая правый край */
+  }
+
+  .lightbox-stage {
+    /* Оставляем 80px справа под колонку с кнопками */
+    width: calc(100vw - 80px) !important; 
+    height: 100dvh !important;
+    padding: 12px 12px 12px 20px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  .lightbox-stage img {
+    /* Та же тонкая равномерная рамка */
+    padding: 5px !important; 
+    max-height: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .lightbox-nav-arrow { 
+    display: none !important; 
+  }
+  
+  /* Вертикальная колонка опций справа по центру */
+  .lightbox-options-vertical-rack {
+    position: absolute !important;
+    flex-direction: column !important; 
+    top: 50% !important; 
+    bottom: auto !important;
+    right: 18px !important; 
+    left: auto !important;
+    transform: translateY(-50%) !important;
+    gap: 22px !important; 
+    width: auto !important;
+  }
+
+  .lightbox-options-vertical-rack .lightbox-btn {
+    width: 42px !important; 
+    height: 42px !important;
+    color: #ffffff !important; 
+  }
+
+  /* Уведомление "Link copied" смещаем по центру относительно самой фотографии */
+  .lightbox-toast-alert {
+    left: calc((100vw - 80px) / 2) !important;
+    bottom: 20px !important;
   }
 }
