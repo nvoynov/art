@@ -1,72 +1,96 @@
 /* src/css/modules/mosaic.css */
 
-/* Desktop Canvas Boundaries: Provides a rock-solid physical pixel height 
-   for the JavaScript clientHeight measurements while maintaining pristine spacing */
 .canvas-wrapper {
   width: 100%;
-  height: calc(100vh - 180px); /* Strict adaptive height budget minus headers */
-  overflow: hidden; /* Prevent internal container spillages */
+  height: calc(100vh - 180px);
+  min-height: 460px;
+  overflow: hidden;
   position: relative;
-  padding: 0 10px;
+  padding: 0 20px;
   box-sizing: border-box;
 }
 
-/* Base Desktop Mosaic Grid Layout (4 Columns) */
+/* Основной контейнер колонок (пропорции grid-template-columns задаются динамически из JS) */
 .mosaic-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: minmax(135px, auto);
-  gap: 25px;
-  max-width: 1000px;
+  gap: 24px;
+  max-width: 1060px;
   margin: 0 auto;
-  height: auto;
+  align-items: start;
 }
 
+/* Вертикальный стек внутри каждой колонки */
+.mosaic-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* Фрактальный мини-блок (делит слот колонки на 2 микро-колонки) */
+.mosaic-fractal-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+/* Воздушная пауза внутри колонки */
+.mosaic-spacer {
+  width: 100%;
+  pointer-events: none;
+}
+
+/* Карточка фотографии: базовое состояние (скорость для плавного исчезновения) */
 .mosaic-item {
   background-color: transparent;
-  overflow: hidden;
   cursor: pointer;
   position: relative;
   opacity: 0;
-  transform: scale(0.99);
-  transition: opacity 1.5s ease, transform 1.5s ease;
+  transform: scale(0.975);
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Состояние проявления: в ~1.5 раза медленнее и глубже */
 .mosaic-item.revealed {
   opacity: 1;
   transform: scale(1);
+  transition: opacity 2.1s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 2.1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .mosaic-item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.2s ease;
+  height: auto; /* 100% сохранение естественных пропорций кадра без кропа */
+  display: block;
+  transition: opacity 0.25s ease;
 }
 
 .mosaic-item:hover img {
   opacity: 0.85;
 }
 
-/* Structural Grid Sizing Patterns */
-.size-normal { grid-column: span 1; grid-row: span 1; }
-.size-wide   { grid-column: span 2; grid-row: span 1; }
-.size-tall   { grid-column: span 1; grid-row: span 2; }
-.size-large  { grid-column: span 2; grid-row: span 2; }
-
 /* ==========================================================================
-   MOBILE & TABLET VIEWPORT ADAPTATION (PREMIUM SCROLLABLE COLLAGE)
+   MOBILE & TABLET VIEWPORT ADAPTATION
    ========================================================================== */
 @media (max-width: 767px) {
   .canvas-wrapper {
-    height: auto; /* Allow natural expansion on mobile so the footer follows cleanly */
+    height: auto;
+    min-height: auto;
     overflow-y: visible;
-    padding: 20px 10px;
+    padding: 20px 12px;
   }
 
   .mosaic-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns matrix layout on mobile screens */
-    grid-auto-rows: minmax(115px, auto);
-    gap: 15px;
+    gap: 14px;
+  }
+
+  .mosaic-column {
+    gap: 14px;
+  }
+
+  .mosaic-fractal-group {
+    gap: 8px;
   }
 }

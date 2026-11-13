@@ -5,8 +5,8 @@
   flex-direction: column; /* Stack logo and navigation vertically */
   align-items: center;    /* Center horizontally */
   text-align: center;
-  margin-top: 3.75rem;     /* 60px / 16 */
-  padding-bottom: 2.5rem;  /* 40px / 16 — Breathable space above the divider line */
+  margin-top: clamp(1.5rem, 4.5vh, 3.75rem);     /* От 24px на невысоких экранах до 60px на больших */
+  padding-bottom: clamp(1.25rem, 3vh, 2.5rem); /* От 20px до 40px над разделительной линией */
   border-bottom: 1px solid #eee;
 }
 
@@ -16,7 +16,7 @@
   font-weight: 300;       /* Thin lightweight character weighting */
   letter-spacing: 0.22em; /* Premium wide layout tracking */
   text-transform: uppercase;
-  margin: 0 0 1.875rem 0;  /* 30px / 16 — Air gap underneath the master title */
+  margin: 0 0 clamp(1rem, 2.2vh, 1.875rem) 0; /* От 16px до 30px между названием и меню */
   line-height: 1;
   display: inline-block;
 }
