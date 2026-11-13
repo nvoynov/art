@@ -9,4 +9,5 @@ description: Personal photography portfolio and series visual exploration.
 
 <script src="assets/js/lightbox.js" defer></script>
 
-<script src="assets/js/mosaic.js" defer></script>
+<script type="module" src="assets/js/mosaic.js"></script>
+

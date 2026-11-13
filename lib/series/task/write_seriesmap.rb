@@ -22,9 +22,20 @@ module Series
 
       # TODO: add image size and other metadata
       # build images map
+      # def imagemap(page)
+      #   page.images
+      #     .map{ [File.basename(it).ext('webp'), { foo: 'bar' }] }
+      #     .to_h
+      # end
+
       def imagemap(page)
-        page.images
-          .map{ [File.basename(it).ext('webp'), { foo: 'bar' }] }
+        mapper = ->(asset){[
+          File.basename(asset.filepath).ext('webp'),
+          { captured_at: asset.captured_at }
+        ]}
+        
+        page.all_media_assets
+          .map(&mapper)
           .to_h
       end
     end
