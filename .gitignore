@@ -3,6 +3,8 @@
 # 1. Core Production Static Build Output
 # Never track the generated website folder, it is built on the fly
 www/
+src/series
+src/series.md
 
 # 2. Ruby Environment and Dependency Artifacts
 .bundle/
