@@ -62,9 +62,10 @@ export class MosaicCurator {
     this.microSeriesSlugs = [];
 
     this.seriesMap.forEach((photos, slug) => {
-      if (photos.length >= 6) {
+      // Полноценные серии от 7 фото (чтобы точно хватило на всю высоту колонки без повторов)
+      if (photos.length >= 7) {
         this.fullSeriesSlugs.push(slug);
-      } else {
+      } else if (photos.length >= 2) {
         this.microSeriesSlugs.push(slug);
       }
     });
@@ -100,7 +101,6 @@ export class MosaicCurator {
 
   // 2. Стратегия ПОРЯДОК + ЗАРИСОВКИ: серии в колонках + колонка микро-альбомов
   curateBySeries(numCols) {
-    // Выбираем серии, которые ещё не показывались в прошлых циклах
     let availableFull = this.fullSeriesSlugs.filter(s => !this.recentSeriesSlugs.has(s));
     if (availableFull.length < numCols) {
       this.recentSeriesSlugs.clear();
@@ -112,17 +112,20 @@ export class MosaicCurator {
 
     const columns = pickedFull.map(slug => shuffleArray(this.seriesMap.get(slug)));
 
-    // На десктопе (3 колонки) с вероятностью 75% превращаем одну колонку в «колонку зарисовок»
-    if (numCols === 3 && this.microSeriesSlugs.length > 0 && Math.random() < 0.75) {
+    // На десктопе (3 колонки) с вероятностью 70% делаем одну колонку из разных микро-альбомов
+    if (numCols === 3 && this.microSeriesSlugs.length >= 2 && Math.random() < 0.7) {
       const sketchColIndex = Math.floor(Math.random() * numCols);
       const shuffledMicros = shuffleArray(this.microSeriesSlugs);
       const sketchPool = [];
 
-      shuffledMicros.forEach(slug => {
+      // Собираем кадры из нескольких микро-альбомов, пока не наберем минимум 9 уникальных фото
+      for (const slug of shuffledMicros) {
         sketchPool.push(...shuffleArray(this.seriesMap.get(slug)));
-      });
+        if (sketchPool.length >= 9) break;
+      }
 
-      if (sketchPool.length >= 4) {
+      // Используем сборку только если набралось достаточно кадров без повторов
+      if (sketchPool.length >= 8) {
         columns[sketchColIndex] = sketchPool;
       }
     }

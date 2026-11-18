@@ -91,7 +91,7 @@ namespace :series do
   # Page template of {title, slug, og_image, redirect_script, filename}
   IMAGE_PAGE = <<~MARKDOWN
     ---
-    title: "%{title} | Fine-Art Print Specification"
+    title: "%{title}"
     layout: image_node
     slug: %{slug}
     og_image: "%{og_image}"
@@ -101,11 +101,10 @@ namespace :series do
     ::: {.image-node-presenter-fallback}
     # %{title}
     
-    This photographic print node reference token code is: `%{filename}`.
+    This photographic node reference token code is: `%{filename}`.
     
     ![%{title}](../..%{filename})
     
-    *Fine-Art limited editions printing metadata module placeholder.*
     :::
   MARKDOWN
 

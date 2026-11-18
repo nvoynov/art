@@ -40,7 +40,14 @@ module Studio
         MARKDOWN
 
         image_ids.each do |id|
-          image = File.join(@config.site_root, @gallery[id])
+          image_path  = @gallery[id]
+          image = 
+             if image_path 
+               File.join(@config.site_root, image_path)
+             else
+               id
+             end
+
           md_content += "  ![#{id}](#{image})\n\n"
         end
 

@@ -6,14 +6,14 @@
   min-height: 460px;
   overflow: hidden;
   position: relative;
-  padding: 0 20px;
+  padding: 12px 20px 0 20px; /* Небольшой верхний запас, чтобы наклоненные верхние углы не обрезались */
   box-sizing: border-box;
 }
 
-/* Основной контейнер колонок (пропорции grid-template-columns задаются динамически из JS) */
+/* Основной контейнер колонок */
 .mosaic-grid {
   display: grid;
-  gap: 24px;
+  gap: 18px;
   max-width: 1060px;
   margin: 0 auto;
   align-items: start;
@@ -23,11 +23,11 @@
 .mosaic-column {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
   min-width: 0;
 }
 
-/* Фрактальный мини-блок (делит слот колонки на 2 микро-колонки) */
+/* Фрактальный мини-блок */
 .mosaic-fractal-group {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -41,34 +41,85 @@
   pointer-events: none;
 }
 
-/* Карточка фотографии: базовое состояние (скорость для плавного исчезновения) */
+/* ==========================================================================
+   ЭСТЕТИКА ФИЗИЧЕСКОГО ОТПЕЧАТКА (РАМКА, ЛЕГКИЙ НАКЛОН, ВЫГИБ БУМАГИ)
+   ========================================================================== */
 .mosaic-item {
-  background-color: transparent;
+  --tilt: 0deg;
+  --shift-x: 0px;
+  --shift-y: 0px;
+
+  background-color: #ffffff;
+  padding: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
   cursor: pointer;
   position: relative;
+  z-index: 1;
   opacity: 0;
-  transform: scale(0.975);
+  transform: translate(var(--shift-x), var(--shift-y)) rotate(var(--tilt)) scale(0.975);
   transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease;
 }
 
-/* Состояние проявления: в ~1.5 раза медленнее и глубже */
+/* Состояние проявления */
 .mosaic-item.revealed {
   opacity: 1;
-  transform: scale(1);
+  transform: translate(var(--shift-x), var(--shift-y)) rotate(var(--tilt)) scale(1);
   transition: opacity 2.1s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 2.1s cubic-bezier(0.22, 1, 0.36, 1);
+              transform 2.1s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease;
+}
+
+/* Тактильное выравнивание при наведении курсора */
+.mosaic-item.revealed:hover {
+  z-index: 10;
+  transform: translate(0px, -2px) rotate(0deg) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.06);
+  transition: opacity 0.3s ease,
+              transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s ease;
+}
+
+/* Иллюзия выгибания рулонной фотобумаги (изогнутые угловые тени под снимком) */
+.mosaic-item.curled::before,
+.mosaic-item.curled::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: 7px;
+  width: 46%;
+  height: 18px;
+  box-shadow: 0 13px 14px rgba(0, 0, 0, 0.22);
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.mosaic-item.curled::before {
+  left: 5px;
+  transform: skew(-7deg) rotate(-3.8deg);
+}
+
+.mosaic-item.curled::after {
+  right: 5px;
+  transform: skew(7deg) rotate(3.8deg);
+}
+
+/* При наведении карточка "прижимается" и выравнивается */
+.mosaic-item.curled:hover::before,
+.mosaic-item.curled:hover::after {
+  opacity: 0.35;
+}
+
+/* Для мелких фрактальных отпечатков рамка чуть тоньше */
+.mosaic-fractal-group .mosaic-item {
+  padding: 3px;
 }
 
 .mosaic-item img {
   width: 100%;
-  height: auto; /* 100% сохранение естественных пропорций кадра без кропа */
+  height: auto;
   display: block;
-  transition: opacity 0.25s ease;
-}
-
-.mosaic-item:hover img {
-  opacity: 0.85;
 }
 
 /* ==========================================================================
@@ -79,18 +130,22 @@
     height: auto;
     min-height: auto;
     overflow-y: visible;
-    padding: 20px 12px;
+    padding: 20px 14px;
   }
 
   .mosaic-grid {
-    gap: 14px;
+    gap: 18px;
   }
 
   .mosaic-column {
-    gap: 14px;
+    gap: 18px;
   }
 
   .mosaic-fractal-group {
-    gap: 8px;
+    gap: 10px;
+  }
+
+  .mosaic-item {
+    padding: 4px;
   }
 }

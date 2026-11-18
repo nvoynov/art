@@ -1,34 +1,53 @@
-/* src/js/mosaic/layout.js - Геометрия колонок, фракталы и анимация проявления */
+/* src/assets/js/mosaic/layout.js - Геометрия колонок, фракталы, эффект отпечатков и анимация */
 
-// Профили геометрии (задел на будущее: можно легко добавлять новые ритмы под разные стратегии)
 export const GEOMETRY_PROFILES = {
   default: {
     maxFractalClusters: 2,
     maxSpacers: 2,
     fractalChance: 0.24,
     spacerChance: 0.24,
-    steppedBottomChance: 0.40
+    steppedBottomChance: 0.40,
+    maxTiltDeg: 1.5,      // угол ручной небрежности (±2.8 градуса)
+    maxShiftPx: 5,        // Сдвиг от оси колонки (±5px)
+    curlProbability: 0.45 // Вероятность иллюзии выгибания рулонной бумаги (45%)
   }
 };
 
 export function getColumnProportions(isDesktop) {
   if (!isDesktop) {
-    return;
+    return Array.of(1, 1);
   }
 
-  const archetypes = [
-    [1.25, 1.85, 1.15], // Крупный центр, спокойные края
-    [1.80, 1.15, 1.35], // Доминирующий левый край
-    [1.15, 1.35, 1.80], // Доминирующий правый край
-    [1.55, 1.05, 1.65], // Узкая «лента» в центре между двумя крупными
-    [1.45, 1.45, 1.15]  // Две равные крупные и одна камерная справа
-  ];
-  return archetypes[Math.floor(Math.random() * archetypes.length)];
+  const archetypes = Array.of(
+    Array.of(1.25, 1.85, 1.15), // Крупный центр, спокойные края
+    Array.of(1.80, 1.15, 1.35), // Доминирующий левый край
+    Array.of(1.15, 1.35, 1.80), // Доминирующий правый край
+    Array.of(1.55, 1.05, 1.65), // Узкая «лента» в центре между двумя крупными
+    Array.of(1.45, 1.45, 1.15)  // Две равные крупные и одна камерная справа
+  );
+  return archetypes.at(Math.floor(Math.random() * archetypes.length));
 }
 
-function createPhotoCard(photo) {
+function createPhotoCard(photo, profile, cardWidth, isMini = false) {
   const item = document.createElement('div');
   item.className = 'mosaic-item';
+
+  // Физическая пропорция: чем шире отпечаток, тем ровнее он лежит (опорная ширина ~260px)
+  const widthFactor = Math.min(1.3, Math.max(0.48, 260 / (cardWidth || 260)));
+  const effectiveMaxTilt = profile.maxTiltDeg * widthFactor;
+
+  const tilt = ((Math.random() * 2 - 1) * effectiveMaxTilt).toFixed(2);
+  const shiftX = Math.round((Math.random() * 2 - 1) * profile.maxShiftPx);
+  const shiftY = Math.round((Math.random() * 2 - 1) * profile.maxShiftPx);
+
+  item.style.setProperty('--tilt', `${tilt}deg`);
+  item.style.setProperty('--shift-x', `${shiftX}px`);
+  item.style.setProperty('--shift-y', `${shiftY}px`);
+
+  // Для части отпечатков добавляем иллюзию выгнутых краев рулонной бумаги
+  if (!isMini && Math.random() < profile.curlProbability) {
+    item.classList.add('curled');
+  }
 
   const img = document.createElement('img');
   img.src = photo.thumbUrl;
@@ -52,8 +71,8 @@ export function renderMosaicGrid(gridContainer, columnPhotoLists, colWeights, is
   const profile = GEOMETRY_PROFILES[profileName] || GEOMETRY_PROFILES.default;
   const numCols = colWeights.length;
 
-  const wrapperWidth = Math.min(gridContainer.parentElement.clientWidth - (isDesktop ? 40 : 24), 1060);
-  const gap = isDesktop ? 24 : 14;
+  const wrapperWidth = Math.min(gridContainer.parentElement.clientWidth - (isDesktop ? 40 : 28), 1060);
+  const gap = isDesktop ? 18 : 14;
   const totalWeight = colWeights.reduce((sum, w) => sum + w, 0);
   const availableWidth = wrapperWidth - gap * (numCols - 1);
   const colPixelWidths = colWeights.map(w => (availableWidth * w) / totalWeight);
@@ -69,16 +88,16 @@ export function renderMosaicGrid(gridContainer, columnPhotoLists, colWeights, is
 
   const maxFractalClusters = isDesktop ? profile.maxFractalClusters : 0;
   const maxSpacers = isDesktop ? profile.maxSpacers : 1;
-  const allCreatedCards = [];
+  const allCreatedCards = new Array();
 
   for (let c = 0; c < numCols; c++) {
     const colEl = document.createElement('div');
     colEl.className = 'mosaic-column';
 
-    const colPhotos = columnPhotoLists[c] || [];
+    const colPhotos = columnPhotoLists.at(c) || new Array();
     if (colPhotos.length === 0) continue;
 
-    const colWidth = colPixelWidths[c];
+    const colWidth = colPixelWidths.at(c);
     const canHaveFractal = isDesktop && colWidth >= 190;
 
     const colTargetHeight = (isDesktop && Math.random() < profile.steppedBottomChance)
@@ -94,7 +113,7 @@ export function renderMosaicGrid(gridContainer, columnPhotoLists, colWeights, is
       safetyCounter++;
       const roll = Math.random();
 
-      // 1. Фрактальное деление: 50/50 либо полные 4 миниатюры (2x2), либо «уголок» из 3 миниатюр с пустым слотом
+      // 1. Фрактальное деление (50/50 полная четверка или «уголок» из 3 отпечатков)
       if (canHaveFractal && roll < profile.fractalChance && fractalClustersUsed < maxFractalClusters) {
         fractalClustersUsed++;
         const fractalGroup = document.createElement('div');
@@ -102,15 +121,15 @@ export function renderMosaicGrid(gridContainer, columnPhotoLists, colWeights, is
 
         const isCornerPattern = Math.random() < 0.5;
         const subCount = isCornerPattern ? 3 : 4;
-        // Для «уголка» случайно выбираем, где будет нижняя третья карточка: слева (1) или справа (2)
         const thirdCardCol = Math.random() < 0.5 ? 1 : 2;
-        const subWidth = (colWidth - 12) / 2;
+        const subWidth = (colWidth - 16) / 2;
         let groupHeight = 0;
 
         for (let k = 0; k < subCount; k++) {
-          const photo = colPhotos[photoCursor % colPhotos.length];
+          const photo = colPhotos.at(photoCursor % colPhotos.length);
           photoCursor++;
-          const miniCard = createPhotoCard(photo);
+          // const miniCard = createPhotoCard(photo, profile, true);
+          const miniCard = createPhotoCard(photo, profile, subWidth, true);
 
           if (isCornerPattern && k === 2) {
             miniCard.style.gridColumn = String(thirdCardCol);
@@ -120,14 +139,13 @@ export function renderMosaicGrid(gridContainer, columnPhotoLists, colWeights, is
           allCreatedCards.push(miniCard);
 
           if (k % 2 === 0) {
-            groupHeight += subWidth * (photo.aspectRatio || 0.67) + 12;
+            groupHeight += subWidth * (photo.aspectRatio || 0.67) + 22;
           }
         }
 
         colEl.appendChild(fractalGroup);
         currentHeight += groupHeight + gap;
       }
-
       // 2. Воздушная пауза
       else if (
         !spacerInThisCol &&
@@ -149,13 +167,15 @@ export function renderMosaicGrid(gridContainer, columnPhotoLists, colWeights, is
       }
       // 3. Цельный кадр в полную ширину колонки
       else {
-        const photo = colPhotos[photoCursor % colPhotos.length];
+        const photo = colPhotos.at(photoCursor % colPhotos.length);
         photoCursor++;
-        const card = createPhotoCard(photo);
+        // const card = createPhotoCard(photo, profile, false);
+        const card = createPhotoCard(photo, profile, colWidth, false);
+
         colEl.appendChild(card);
         allCreatedCards.push(card);
 
-        const estimatedCardHeight = colWidth * (photo.aspectRatio || 0.67);
+        const estimatedCardHeight = colWidth * (photo.aspectRatio || 0.67) + 10;
         currentHeight += estimatedCardHeight + gap;
       }
     }
@@ -169,8 +189,8 @@ export function renderMosaicGrid(gridContainer, columnPhotoLists, colWeights, is
 export function runRevealChoreography(gridContainer, cardElements) {
   if (cardElements.length === 0) return;
 
-  const patterns = ['norton', 'center-out', 'rain', 'diagonal', 'edges-in'];
-  const activePattern = patterns[Math.floor(Math.random() * patterns.length)];
+  const patterns = new Array('norton', 'center-out', 'rain', 'diagonal', 'edges-in');
+  const activePattern = patterns.at(Math.floor(Math.random() * patterns.length));
 
   const gridRect = gridContainer.getBoundingClientRect();
   const centerX = gridRect.left + gridRect.width / 2;
@@ -209,4 +229,3 @@ export function runRevealChoreography(gridContainer, cardElements) {
     }, 60 + delay);
   });
 }
-
